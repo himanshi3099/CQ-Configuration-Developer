@@ -1,0 +1,5 @@
+trigger TaskTrigger on Task (after update) {
+    if (Trigger.isAfter && Trigger.isUpdate) {
+        TaskHandler.completeTaskAndUpdateAccount(Trigger.new , Trigger.oldMap);
+    }
+}
